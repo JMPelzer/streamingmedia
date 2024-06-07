@@ -7,30 +7,35 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>MuzakMaker</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 
 </head>
 
 <body>
     <header>
-
-        <h1>SmoothJazz</h1>
+        <h2>Smooth Jazz</h2>
         <p>This station is dedicated to the soothing sounds of smooth jazz. This genre of commercially oriented
             crossover jazz became dominant in the 1980s and early 1990s.</p>
-
-        <nav>
-            <ul>
-                <li><a href="home">MuzakMaker</a></li>
-                <li><a href="trending">Songs</a></li>
-                <li><a href="yourList">Your Playlists</a></li>
-                <li><a href="curatedList">Curated Playlists</a></li>
-                <li><a href="user"><img src="images/duke-silver.png" alt="user profile picture"></a></li>
-            </ul>
-        </nav>
     </header>
+    <!--nav will be displayed above header-->
+    <nav>
+
+        <ul>
+            <li><a href="#home">
+                    <h1>MuzakMaker</h1>
+                </a></li>
+            <li><a href="#trending">Trending<br>Songs</a></li>
+            <li><a href="#yourList">Your<br>Playlists</a></li>
+            <li><a href="#curatedList">Curated<br>Playlists</a></li>
+            <li><a href="user"><img src="images/duke-silver.png" alt="user profile picture"></a></li>
+        </ul>
+    </nav>
+
+
     <main>
+        <!-- horizontal scrolling card selection: has five cards span 1 to -1-->
         <section id="trending">
-            <h2>TrendingSongs</h2>
+            <h2>Trending Songs</h2>
             <div class="scroll">
                 <section>
                     <div>
@@ -44,7 +49,7 @@
                     <audio controls src="audio/aloma.mp3">
                         Your browser does not support the <code>audio</code>element.</audio>
                 </section>
-                <section>
+                <section class="cardRoad">
                     <div>
                         <h3>My Road</h3>
                         <dl>
@@ -57,7 +62,7 @@
                     <audio controls src="audio/my-road.mp3">Your browser does not support the
                         <code>audio</code>element.</audio>
                 </section>
-                <section>
+                <section class="cardPapaya">
                     <div>
                         <h3>Papaya</h3>
                         <dl>
@@ -69,7 +74,7 @@
                     <audio controls src="audio/papaya.mp3">Your browser does not support the
                         <code>audio</code>element.</audio>
                 </section>
-                <section>
+                <section class="cardSmoothies">
                     <div>
                         <h3>Smoothies</h3>
                         <dl>
@@ -82,7 +87,7 @@
                     <audio controls src="audio/smoothies.mp3">Your browser does not support the
                         <code>audio</code>element.</audio>
                 </section>
-                <section>
+                <section class="Performance">
                     <div>
                         <h3>Successful Performance</h3>
                         <dl>
@@ -92,12 +97,14 @@
                     </div>
                     <img src="images/successful-performance-cover.png"
                         alt="Picture of a man excited with a smile in red sweater standing before a light blue wall">
-                    <audio controls src="audio/successful-performance.mp3">Your browser does not support the
+                    <audio controls src="audio/successful-performance.mp3">Your browser does not support
+                        the
                         <code>audio</code>element.</audio>
                 </section>
             </div>
-            <button>More trending</button>
+            <button class="button">More trending</button>
         </section>
+        <!-- here area will be displayed side by side in two grids with 5 cards each, that scroll vertically. No audio links -->
 
         <section id="yourList">
             <div class="scroll">
@@ -129,7 +136,7 @@
                     <p>Background music to keep you going while you study.</p>
                 </section>
             </div>
-            <button>All your playlists</button>
+            <button class="button">All your playlists</button>
         </section>
 
         <section id="curatedList">
@@ -163,8 +170,9 @@
                     <p>The greatest collection of your sax favorites.</p>
                 </section>
             </div>
-            <button>More curated</button>
+            <button class="button">More curated</button>
         </section>
+
     </main>
     <footer>
         <p>Copyright 2022 Smooth Jazz</p>
