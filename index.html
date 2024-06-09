@@ -19,14 +19,16 @@
     </header>
     <!--nav will be displayed above header-->
     <nav>
+        <input type="checkbox" id="nav-button">
 
+        <label for="nav-button">&#9776;</label>
         <ul>
             <li><a href="#home">
                     <h1>MuzakMaker</h1>
                 </a></li>
             <li><a href="#trending">Trending<br>Songs</a></li>
-            <li><a href="#yourList">Your<br>Playlists</a></li>
-            <li><a href="#curatedList">Curated<br>Playlists</a></li>
+            <li><a href="#playlists">Your<br>Playlists</a></li>
+            <li><a href="#curated">Curated<br>Playlists</a></li>
             <li><a href="user"><img src="images/duke-silver.png" alt="user profile picture"></a></li>
         </ul>
     </nav>
@@ -104,9 +106,10 @@
             </div>
             <button class="button">More trending</button>
         </section>
-        <!-- here area will be displayed side by side in two grids with 5 cards each, that scroll vertically. No audio links -->
-
-        <section id="yourList">
+    </main>
+    <!-- here area will be displayed side by side in two grids with 5 cards each, that scroll vertically. No audio links -->
+    <aside>
+        <section id="playlists">
             <div class="scroll">
                 <h2>Your Playlists</h2>
                 <section>
@@ -139,7 +142,7 @@
             <button class="button">All your playlists</button>
         </section>
 
-        <section id="curatedList">
+        <section id="curated">
             <div class="scroll">
                 <h2>Curated Playlists</h2>
                 <section>
@@ -172,8 +175,8 @@
             </div>
             <button class="button">More curated</button>
         </section>
+    </aside>
 
-    </main>
     <footer>
         <p>Copyright 2022 Smooth Jazz</p>
     </footer>

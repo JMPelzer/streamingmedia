@@ -12,7 +12,7 @@ white #FFFFFF
 font-family: verdana, geneva, tahoma, san-serif;
 */
 /*_________________GLOBAL STYLES________________________*/
-
+/*Main tag styles*/
 
 html {
     background-color: #020659;
@@ -20,13 +20,19 @@ html {
 }
 
 body {
-    margin: 0 auto;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
+    background-color;
+
 }
 
 main {
+    background-color: white;
+}
+
+aside {
     background-color: white;
 }
 
@@ -36,6 +42,16 @@ footer {
     color: #590242;
 }
 
+/*grid placement of nave and header*/
+header {
+    grid-row: 2;
+}
+
+nav {
+    grid-row: 1;
+}
+
+/* button styles*/
 .button {
     background-color: #590242;
     color: #FFFFFF;
@@ -46,6 +62,10 @@ footer {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 20px;
 
+}
+
+.button:hover {
+    background-color: #020659;
 }
 
 /*font-size*/
@@ -70,14 +90,11 @@ footer p {
     font-size: .75em;
 }
 
-/*----header and nav styles---*/
-
+/*----header styles---*/
 header {
     background-image: linear-gradient(to right, #2104d9, black);
     color: white;
     text-align: left;
-    grid-column: 1/-1;
-    grid-row: 2;
     padding: 40px;
 }
 
@@ -86,11 +103,11 @@ header h2 {
     color: #FFFFFF;
 }
 
-/*nav*/
+
+/*nav styles*/
 nav {
     background: #020873;
-    grid-column: 1/-2;
-    grid-row: 1;
+    postion: fixed;
 }
 
 nav li {
@@ -104,34 +121,67 @@ nav a h1 {
 
 }
 
-
 nav a {
     color: white;
     text-decoration: none;
     text-transform: uppercase;
     text-align: center;
-    margin: 4px 30px;
+    padding: 0px 5px;
+}
+
+#nav-button {
+    display: none;
+}
+
+label {
+    display: none;
 }
 
 nav a:hover {
     background-color: #590242;
 }
 
+/*scroll bar class styles*/
 
-
-
-
-/*----- global music card styles----*/
-
-audio::-webkit-media-controls-ply-button {
-    background-color: #FFFFFF;
-    border-radius: 50px;
+#trending .scroll {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
-audio::webkit-media-controls-enclosure {
-    background-color: rgba 255, 255, 255, rgba(255, 255, 255, .75);
+#trending .scroll section {
+    margin: 10px;
+    position: relative;
 }
 
+.scroll div {
+    position: absolute;
+    top: 251px;
+    background-color: rgba(255, 255, 255, .75);
+    padding: 5px;
+    height: 50px;
+    width: 350px;
+}
+
+/*trending scrolbar webkit styles*/
+#trending ::-webkit-scrollbar {
+    width: 15px;
+}
+
+#trending ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 15px #590242
+}
+
+#trending ::-webkit-scrollbar-thumb {
+    background: #590242;
+    border-radius: 5px;
+}
+
+#trending ::-webkit-scrollbar-thumb:hover {
+    background: #020659;
+}
+
+/*trending songs styles*/
 dl {
     display: flex;
 
@@ -155,8 +205,6 @@ h2 {
     padding: 10px;
 }
 
-/*----Trending Songs styles----*/
-
 #trending h3 {
     position: absolute;
     bottom: 15px;
@@ -164,89 +212,58 @@ h2 {
 
 }
 
-audio {
-    position: absolute;
-    bottom: 150px;
-    left: 5px;
+audio::-webkit-media-controls-ply-button {
+    background-color: #FFFFFF;
+    border-radius: 50px;
 }
 
-#trending .scroll {
-    display: flex;
-    overflow-x: auto;
-    overflow-y: hidden;
+audio::webkit-media-controls-enclosure {
+    background-color: rgba 255, 255, 255, rgba(255, 255, 255, .75);
 }
 
-#trending .scroll section {
-    margin: 10px;
-    position: relative;
-}
-
-#trending .scroll div {
-    position: absolute;
-    top: 251px;
-    background-color: rgba(255, 255, 255, .75);
-    padding: 5px;
-    height: 50px;
-    width: 350px;
-}
-
-#trending ::-webkit-scrollbar {
-    width: 15px;
-}
-
-#trending ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 15px #590242
-}
-
-#trending ::-webkit-scrollbar-thumb {
-    background: #590242;
-    border-radius: 5px;
-}
-
-#trending ::-webkit-scrollbar-thumb:hover {
-    background: #020659;
-}
-
-/*---Your Playlist and Curated Playlist section WHAT ARE THE SIZE OF CARDS??? --*/
-#yourList {
-    background-color: white;
+/*---Your Playlist--*/
+#playlists {
     color: white;
 }
 
-#yourList .scroll {
+#playlists .scroll {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 5fr;
     overflow-x: auto;
-    overflow-y: hidden;
+    overflow-y: scroll;
+    height: 650px;
 }
 
-#yourList .scroll section {
+#playlists .scroll section {
 
     background-color: #0D8DFB;
     border: 20px solid #2699F8;
     position: relative;
 }
 
-#curatedList {
-    background-color: white;
+/*--Curated Styles--*/
+#curated {
     color: white;
 }
 
-#curatedList .scroll {
+#curated .scroll {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 5fr;
     overflow-x: auto;
-    overflow-y: hidden;
+    overflow-y: scroll;
+    height: 650px;
 }
 
-#curatedList .scroll section {
+#curated .scroll section {
 
     background-color: #020873;
     border: 20px solid #030a8c;
     position: relative;
 }
+
+/*-- Yor Playlist and Curated  webkit Styles--*/
 
 #playlists ::-webkit-scrollbar,
 #curated ::-webkit-scrollbar {
@@ -255,75 +272,46 @@ audio {
 
 #playlists ::-webkit-scrollbar-track,
 #curated ::-webkit-scrollbar-track {
-    width: 15px;
+    box-shadow: inset 0 0 15px #020659;
 }
 
 #playlists ::-webkit-scrollbar-thumb,
 #curated ::-webkit-scrollbar-thumb {
-    box-shadow: inset 0 0 15px #020659;
+    background: #020659;
+    border-radius: 5px;
 }
 
 #playlists ::-webkit-scrollbar-thumb:hover,
 #curated ::-webkit-scrollbar-thumb:hover {
-    background: #FFFFFF;
+    background: white;
 }
 
-@media screen and (min-width:375px) {
-    /*nav changes 1. h1 is centered and li a are moved in dropdown hamburger menu on left*/
 
 
-    /*buttons are on left*/
+
+@media (min-width: 350px) {
+    body {
+        width: 345px;
+    }
+
+    /*nav styles small screen*/
 
 
-    /*playlist and curated in one column*/
-    #playlist {
+}
+
+@media (min-width: 850px) {
+
+    body {
+        width: 834px;
+    }
+
+
+
+    /*nav styles large screen*/
+
+    /*grid change for large screen*/
+    aside {
         display: grid;
-        grid-template-columns: 1FR;
-    }
-
-    #curated {
-        display: ;
-        grid-template-columns: 1FR;
+        grid-template-columns: 1fr 1fr;
     }
 }
-
-
-
-@media screen and (min-width:834px) {
-    /*nav changes: all list items are horizontal*/
-
-    /*buttons are on right*/
-
-    /*playlist and curated in 2 columns side by side*/
-    #playlist {
-        display: grid;
-        grid-template-columns: 1FR 1FR;
-    }
-
-    #curated {
-        display: ;
-        grid-template-columns: 1FR 1FR;
-    }
-}
-
-/*scroll code--
-.scroll {
-    display: grid;
-    grid-template-colums: repeat(5,1fr);
-    overflow-x: auto;
-    overflow-y: hidden;
-}
-
-.scroll section {
-    margin: 10px;
-    position: relative;
-}
-
-.scroll div {
-    position: absolute;
-    top: 251px;
-    background-color: rgba(255, 255, 255, .75);
-    padding: 5px;
-    height: 50px;
-    width: 350px;
-}*/
