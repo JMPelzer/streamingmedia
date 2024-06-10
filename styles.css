@@ -24,7 +24,8 @@ body {
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
-    background-color;
+    width: 375px;
+
 
 }
 
@@ -34,6 +35,7 @@ main {
 
 aside {
     background-color: white;
+
 }
 
 footer {
@@ -42,13 +44,14 @@ footer {
     color: #590242;
 }
 
-/*grid placement of nave and header*/
+/*grid placement of nav and header*/
 header {
     grid-row: 2;
 }
 
 nav {
     grid-row: 1;
+
 }
 
 /* button styles*/
@@ -107,12 +110,17 @@ header h2 {
 /*nav styles*/
 nav {
     background: #020873;
-    postion: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
 }
 
 nav li {
     display: inline-flex;
-    text-align: center;
+    margin: 3px 25px;
+
+
 }
 
 nav a h1 {
@@ -147,6 +155,7 @@ nav a:hover {
     display: flex;
     overflow-x: auto;
     overflow-y: hidden;
+    width: 375px;
 }
 
 #trending .scroll section {
@@ -154,7 +163,8 @@ nav a:hover {
     position: relative;
 }
 
-.scroll div {
+/*trending scrollbar + webkit styles*/
+#trending .scroll div {
     position: absolute;
     top: 251px;
     background-color: rgba(255, 255, 255, .75);
@@ -163,13 +173,13 @@ nav a:hover {
     width: 350px;
 }
 
-/*trending scrolbar webkit styles*/
+
 #trending ::-webkit-scrollbar {
     width: 15px;
 }
 
 #trending ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 15px #590242
+    box-shadow: inset 0 0 15px #590242;
 }
 
 #trending ::-webkit-scrollbar-thumb {
@@ -212,6 +222,12 @@ h2 {
 
 }
 
+audio {
+    position: absolute;
+    bottom: 150px;
+    left: 5px;
+}
+
 audio::-webkit-media-controls-ply-button {
     background-color: #FFFFFF;
     border-radius: 50px;
@@ -227,16 +243,14 @@ audio::webkit-media-controls-enclosure {
 }
 
 #playlists .scroll {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 5fr;
-    overflow-x: auto;
-    overflow-y: scroll;
-    height: 650px;
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: auto;
+    width: 375px;
 }
 
 #playlists .scroll section {
-
+    margin: 0px;
     background-color: #0D8DFB;
     border: 20px solid #2699F8;
     position: relative;
@@ -247,17 +261,16 @@ audio::webkit-media-controls-enclosure {
     color: white;
 }
 
+
 #curated .scroll {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 5fr;
-    overflow-x: auto;
-    overflow-y: scroll;
-    height: 650px;
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: auto;
+    width: 375px;
 }
 
 #curated .scroll section {
-
+    margin: 0px;
     background-color: #020873;
     border: 20px solid #030a8c;
     position: relative;
@@ -286,32 +299,121 @@ audio::webkit-media-controls-enclosure {
     background: white;
 }
 
-
-
-
-@media (min-width: 350px) {
-    body {
-        width: 345px;
-    }
-
-    /*nav styles small screen*/
-
-
-}
-
+/*Media Query for large screen*/
 @media (min-width: 850px) {
 
     body {
         width: 834px;
     }
 
+    #trending .scroll {
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+        width: 834px;
+    }
 
 
-    /*nav styles large screen*/
-
-    /*grid change for large screen*/
+    /*grid change for large screen for Your Playlists and Curated Playlists*/
     aside {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
+
+    #playlists .scroll {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 5fr;
+        overflow-x: auto;
+        overflow-y: scroll;
+        height: 500px;
+        width: 417px;
+
+
+    }
+
+    #playlists .scroll img {
+        float: left;
+    }
+
+    #playlists .scroll p,
+    h3 {
+        text-align: center;
+    }
+
+    #curated .scroll {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 5fr;
+        overflow-x: auto;
+        overflow-y: scroll;
+        height: 500px;
+        width: 417px;
+
+
+
+    }
+
+    #curated .scroll img {
+        float: left;
+    }
+
+    #curated .scroll p {
+        text-align: center;
+    }
+
+    .button {
+        float: right;
+    }
 }
+
+/*could not get the hamburger nav to work in opposite screen direction*/
+/*nav styles small screen for hamburger menu @media only screen and (max-width: 700px) and (orientation: portrait) {
+
+    nav {
+        align-items: center;
+    }
+
+    nav ul {
+        position: absolute;
+        top: 34px;
+        width: 100%;
+        background: #2699F8;
+        height: 0;
+        overflow: hidden;
+        transition: height 1s;
+    }
+
+    nav li {
+        display: block;
+        width: 100%;
+        padding: 5px;
+    }
+
+    label {
+        display: block;
+        padding: 0px 10px;
+        font-size: 30px;
+        cursor: pointer;
+        color: #0D8DFB;
+    }
+
+    label:hover {
+        color: white;
+    }
+
+    nav a {
+        width: 100%;
+        display: block;
+    }
+
+    #nav-button:checked~ul {
+        height: 340px;
+        transition: height 1s;
+        z-index: 1;
+    }
+
+    nav li:hover {
+        background: #590242;
+    }
+}*/
